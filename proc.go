@@ -18,6 +18,8 @@ import (
 
 const MaxEvents = 256
 
+type MachType int
+
 type DMDConfig struct {
 	NumRows            uint8
 	NumColumns         uint16
@@ -190,7 +192,7 @@ type PROC struct {
 	prEvents []C.PREvent
 }
 
-func new(machType int) (*PROC, error) {
+func New(machType MachType) (*PROC, error) {
 	handle := C.PRCreate(C.PRMachineType(machType))
 	if uintptr(handle) == C.kPRHandleInvalid {
 		return nil, procError()
@@ -199,10 +201,6 @@ func new(machType int) (*PROC, error) {
 		h:        handle,
 		prEvents: make([]C.PREvent, MaxEvents),
 	}, nil
-}
-
-func NewWPC() (*PROC, error) {
-	return new(3)
 }
 
 func (p *PROC) DMDDraw(dots []uint8) error {
@@ -228,6 +226,18 @@ func (p *PROC) DriverGetState(driverNum uint8, driverState *DriverState) {
 	var pcDriverState C.PRDriverState
 	C.PRDriverGetState(p.h, C.uint8_t(driverNum), &pcDriverState)
 	driverState.fromC(&pcDriverState)
+}
+
+func (p *PROC) DriverEnable(driverNum uint8) error {
+	return p.DriverPulse(driverNum, 0)
+}
+
+func (p *PROC) DriverDisable(driverNum uint8) error {
+	result := C.PRDriverDisable(p.h, C.uint8_t(driverNum))
+	if int(result) != C.kPRSuccess {
+		return procError()
+	}
+	return nil
 }
 
 func (p *PROC) DriverPatter(driverNum uint8, millisecondsOn uint8, millisecondsOff uint8, originalOnTime uint8, now bool) error {

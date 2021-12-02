@@ -2,6 +2,8 @@ package wpc
 
 import "github.com/drop-target-pinball/go-pinproc"
 
+const MachType = pinproc.MachType(3)
+
 var DMDConfigDefault = pinproc.DMDConfig{
 	NumRows:            32,
 	NumColumns:         128,

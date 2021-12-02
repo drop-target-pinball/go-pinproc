@@ -11,7 +11,7 @@ import (
 func main() {
 	log.SetFlags(0)
 
-	pc, err := pinproc.NewWPC()
+	pc, err := pinproc.New(wpc.MachType)
 	if err != nil {
 		log.Fatalf("unable to connect to P-ROC: %v", err)
 	}
