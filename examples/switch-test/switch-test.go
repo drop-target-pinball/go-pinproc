@@ -36,26 +36,24 @@ func main() {
 	}
 
 	ticker := time.NewTicker(100 * time.Millisecond)
-	events := make([]pinproc.Event, pinproc.MaxEvents, pinproc.MaxEvents)
+	events := make([]pinproc.Event, pinproc.MaxEvents)
 	fmt.Println("listening for switch events")
 	for {
-		select {
-		case <-ticker.C:
-			n, err := pc.GetEvents(events)
-			if err != nil {
-				log.Fatal(err)
-			}
-			for i := 0; i < n; i++ {
-				e := events[i]
-				ident := wpc.SwitchNames[uint8(e.Value)]
-				fmt.Printf("%v %v\n", ident, e.EventType)
-			}
-			if err := pc.DriverWatchdogTickle(); err != nil {
-				log.Fatal(err)
-			}
-			if err := pc.FlushWriteData(); err != nil {
-				log.Fatal(err)
-			}
+		<-ticker.C
+		n, err := pc.GetEvents(events)
+		if err != nil {
+			log.Fatal(err)
+		}
+		for i := 0; i < n; i++ {
+			e := events[i]
+			ident := wpc.SwitchNames[uint8(e.Value)]
+			fmt.Printf("%v %v\n", ident, e.EventType)
+		}
+		if err := pc.DriverWatchdogTickle(); err != nil {
+			log.Fatal(err)
+		}
+		if err := pc.FlushWriteData(); err != nil {
+			log.Fatal(err)
 		}
 	}
 }

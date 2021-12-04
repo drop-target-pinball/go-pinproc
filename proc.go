@@ -117,12 +117,12 @@ func (e *Event) fromC(ce *C.PREvent) {
 type EventType uint8
 
 const (
-	EventTypeInvalid EventType = iota
-	EventTypeSwitchOpenDebounced
-	EventTypeSwitchClosedDebounced
-	EventTypeSwitchOpenNondebounced
-	EventTypeSwitchClosedNondebounced
-	EventTypeDMDFrameDisplayed
+	EventTypeInvalid                  EventType = 0
+	EventTypeSwitchClosedDebounced    EventType = 1
+	EventTypeSwitchOpenDebounced      EventType = 2
+	EventTypeSwitchClosedNondebounced EventType = 3
+	EventTypeSwitchOpenNondebounced   EventType = 4
+	EventTypeDMDFrameDisplayed        EventType = 5
 )
 
 func (e EventType) String() string {
