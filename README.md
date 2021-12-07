@@ -20,6 +20,10 @@ The `examples` directory contains code to test the various capabilities of the P
 go run examples/lamp-test/lamp-test.go
 ```
 
+The library is being used for this project:
+
+https://github.com/drop-target-pinball/spin
+
 ## License
 
 MIT
