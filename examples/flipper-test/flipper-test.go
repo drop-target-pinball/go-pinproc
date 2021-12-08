@@ -46,10 +46,9 @@ func main() {
 	rightDriversOn := []pinproc.DriverState{rightMainOn, rightHoldOn}
 	rightDriversOff := []pinproc.DriverState{rightHoldOff}
 
-	// Flipper buttons are optos so open == button pressed
 	err = pc.SwitchUpdateRule(
 		wpc.SF4,
-		pinproc.EventTypeSwitchOpenNondebounced,
+		pinproc.EventTypeSwitchClosedNondebounced,
 		pinproc.SwitchRule{},
 		leftDriversOn,
 		true)
@@ -58,7 +57,7 @@ func main() {
 	}
 	err = pc.SwitchUpdateRule(
 		wpc.SF4,
-		pinproc.EventTypeSwitchClosedNondebounced,
+		pinproc.EventTypeSwitchOpenNondebounced,
 		pinproc.SwitchRule{},
 		leftDriversOff,
 		true)
@@ -67,7 +66,7 @@ func main() {
 	}
 	err = pc.SwitchUpdateRule(
 		wpc.SF2,
-		pinproc.EventTypeSwitchOpenNondebounced,
+		pinproc.EventTypeSwitchClosedNondebounced,
 		pinproc.SwitchRule{},
 		rightDriversOn,
 		true)
@@ -76,7 +75,7 @@ func main() {
 	}
 	err = pc.SwitchUpdateRule(
 		wpc.SF2,
-		pinproc.EventTypeSwitchClosedNondebounced,
+		pinproc.EventTypeSwitchOpenNondebounced,
 		pinproc.SwitchRule{},
 		rightDriversOff,
 		true)

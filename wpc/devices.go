@@ -4,231 +4,231 @@ package wpc
 
 // Coils and flashers
 const (
-	C01 = 40
-	C02 = 41
-	C03 = 42
-	C04 = 43
-	C05 = 44
-	C06 = 45
-	C07 = 46
-	C08 = 47
-	C09 = 48
-	C10 = 49
-	C11 = 50
-	C12 = 51
-	C13 = 52
-	C14 = 53
-	C15 = 54
-	C16 = 55
-	C17 = 56
-	C18 = 57
-	C19 = 58
-	C20 = 59
-	C21 = 60
-	C22 = 61
-	C23 = 62
-	C24 = 63
-	C25 = 64
-	C26 = 65
-	C27 = 66
-	C28 = 67
-	C29 = 32
-	C30 = 33
-	C31 = 34
-	C32 = 35
-	C33 = 36
-	C34 = 37
-	C35 = 38
-	C36 = 39
-	C37 = 144
-	C38 = 145
-	C39 = 146
-	C40 = 147
-	C41 = 148
-	C42 = 149
-	C43 = 150
-	C44 = 151
+	C01 = uint8(40)
+	C02 = uint8(41)
+	C03 = uint8(42)
+	C04 = uint8(43)
+	C05 = uint8(44)
+	C06 = uint8(45)
+	C07 = uint8(46)
+	C08 = uint8(47)
+	C09 = uint8(48)
+	C10 = uint8(49)
+	C11 = uint8(50)
+	C12 = uint8(51)
+	C13 = uint8(52)
+	C14 = uint8(53)
+	C15 = uint8(54)
+	C16 = uint8(55)
+	C17 = uint8(56)
+	C18 = uint8(57)
+	C19 = uint8(58)
+	C20 = uint8(59)
+	C21 = uint8(60)
+	C22 = uint8(61)
+	C23 = uint8(62)
+	C24 = uint8(63)
+	C25 = uint8(64)
+	C26 = uint8(65)
+	C27 = uint8(66)
+	C28 = uint8(67)
+	C29 = uint8(32)
+	C30 = uint8(33)
+	C31 = uint8(34)
+	C32 = uint8(35)
+	C33 = uint8(36)
+	C34 = uint8(37)
+	C35 = uint8(38)
+	C36 = uint8(39)
+	C37 = uint8(144)
+	C38 = uint8(145)
+	C39 = uint8(146)
+	C40 = uint8(147)
+	C41 = uint8(148)
+	C42 = uint8(149)
+	C43 = uint8(150)
+	C44 = uint8(151)
 )
 
 // General illumination
 const (
-	G01 = 72
-	G02 = 73
-	G03 = 74
-	G04 = 75
-	G05 = 76
+	G01 = uint8(72)
+	G02 = uint8(73)
+	G03 = uint8(74)
+	G04 = uint8(75)
+	G05 = uint8(76)
 )
 
 // Lamps
 const (
-	L11 = 80
-	L12 = 81
-	L13 = 82
-	L14 = 83
-	L15 = 84
-	L16 = 85
-	L17 = 86
-	L18 = 87
-	L21 = 88
-	L22 = 89
-	L23 = 90
-	L24 = 91
-	L25 = 92
-	L26 = 93
-	L27 = 94
-	L28 = 95
-	L31 = 96
-	L32 = 97
-	L33 = 98
-	L34 = 99
-	L35 = 100
-	L36 = 101
-	L37 = 102
-	L38 = 103
-	L41 = 104
-	L42 = 105
-	L43 = 106
-	L44 = 107
-	L45 = 108
-	L46 = 109
-	L47 = 110
-	L48 = 111
-	L51 = 112
-	L52 = 113
-	L53 = 114
-	L54 = 115
-	L55 = 116
-	L56 = 117
-	L57 = 118
-	L58 = 119
-	L61 = 120
-	L62 = 121
-	L63 = 122
-	L64 = 123
-	L65 = 124
-	L66 = 125
-	L67 = 126
-	L68 = 127
-	L71 = 128
-	L72 = 129
-	L73 = 130
-	L74 = 131
-	L75 = 132
-	L76 = 133
-	L77 = 134
-	L78 = 135
-	L81 = 136
-	L82 = 137
-	L83 = 138
-	L84 = 139
-	L85 = 140
-	L86 = 141
-	L87 = 142
-	L88 = 143
+	L11 = uint8(80)
+	L12 = uint8(81)
+	L13 = uint8(82)
+	L14 = uint8(83)
+	L15 = uint8(84)
+	L16 = uint8(85)
+	L17 = uint8(86)
+	L18 = uint8(87)
+	L21 = uint8(88)
+	L22 = uint8(89)
+	L23 = uint8(90)
+	L24 = uint8(91)
+	L25 = uint8(92)
+	L26 = uint8(93)
+	L27 = uint8(94)
+	L28 = uint8(95)
+	L31 = uint8(96)
+	L32 = uint8(97)
+	L33 = uint8(98)
+	L34 = uint8(99)
+	L35 = uint8(100)
+	L36 = uint8(101)
+	L37 = uint8(102)
+	L38 = uint8(103)
+	L41 = uint8(104)
+	L42 = uint8(105)
+	L43 = uint8(106)
+	L44 = uint8(107)
+	L45 = uint8(108)
+	L46 = uint8(109)
+	L47 = uint8(110)
+	L48 = uint8(111)
+	L51 = uint8(112)
+	L52 = uint8(113)
+	L53 = uint8(114)
+	L54 = uint8(115)
+	L55 = uint8(116)
+	L56 = uint8(117)
+	L57 = uint8(118)
+	L58 = uint8(119)
+	L61 = uint8(120)
+	L62 = uint8(121)
+	L63 = uint8(122)
+	L64 = uint8(123)
+	L65 = uint8(124)
+	L66 = uint8(125)
+	L67 = uint8(126)
+	L68 = uint8(127)
+	L71 = uint8(128)
+	L72 = uint8(129)
+	L73 = uint8(130)
+	L74 = uint8(131)
+	L75 = uint8(132)
+	L76 = uint8(133)
+	L77 = uint8(134)
+	L78 = uint8(135)
+	L81 = uint8(136)
+	L82 = uint8(137)
+	L83 = uint8(138)
+	L84 = uint8(139)
+	L85 = uint8(140)
+	L86 = uint8(141)
+	L87 = uint8(142)
+	L88 = uint8(143)
 )
 
 // Switch matrix
 const (
-	S11 = 32
-	S12 = 33
-	S13 = 34
-	S14 = 35
-	S15 = 36
-	S16 = 37
-	S17 = 38
-	S18 = 39
-	S21 = 48
-	S22 = 49
-	S23 = 50
-	S24 = 51
-	S25 = 52
-	S26 = 53
-	S27 = 54
-	S28 = 55
-	S31 = 64
-	S32 = 65
-	S33 = 66
-	S34 = 67
-	S35 = 68
-	S36 = 69
-	S37 = 70
-	S38 = 71
-	S41 = 80
-	S42 = 81
-	S43 = 82
-	S44 = 83
-	S45 = 84
-	S46 = 85
-	S47 = 86
-	S48 = 87
-	S51 = 96
-	S52 = 97
-	S53 = 98
-	S54 = 99
-	S55 = 100
-	S56 = 101
-	S57 = 102
-	S58 = 103
-	S61 = 112
-	S62 = 113
-	S63 = 114
-	S64 = 115
-	S65 = 116
-	S66 = 117
-	S67 = 118
-	S68 = 119
-	S71 = 128
-	S72 = 129
-	S73 = 130
-	S74 = 131
-	S75 = 132
-	S76 = 133
-	S77 = 134
-	S78 = 135
-	S81 = 144
-	S82 = 145
-	S83 = 146
-	S84 = 147
-	S85 = 148
-	S86 = 149
-	S87 = 150
-	S88 = 151
+	S11 = uint8(32)
+	S12 = uint8(33)
+	S13 = uint8(34)
+	S14 = uint8(35)
+	S15 = uint8(36)
+	S16 = uint8(37)
+	S17 = uint8(38)
+	S18 = uint8(39)
+	S21 = uint8(48)
+	S22 = uint8(49)
+	S23 = uint8(50)
+	S24 = uint8(51)
+	S25 = uint8(52)
+	S26 = uint8(53)
+	S27 = uint8(54)
+	S28 = uint8(55)
+	S31 = uint8(64)
+	S32 = uint8(65)
+	S33 = uint8(66)
+	S34 = uint8(67)
+	S35 = uint8(68)
+	S36 = uint8(69)
+	S37 = uint8(70)
+	S38 = uint8(71)
+	S41 = uint8(80)
+	S42 = uint8(81)
+	S43 = uint8(82)
+	S44 = uint8(83)
+	S45 = uint8(84)
+	S46 = uint8(85)
+	S47 = uint8(86)
+	S48 = uint8(87)
+	S51 = uint8(96)
+	S52 = uint8(97)
+	S53 = uint8(98)
+	S54 = uint8(99)
+	S55 = uint8(100)
+	S56 = uint8(101)
+	S57 = uint8(102)
+	S58 = uint8(103)
+	S61 = uint8(112)
+	S62 = uint8(113)
+	S63 = uint8(114)
+	S64 = uint8(115)
+	S65 = uint8(116)
+	S66 = uint8(117)
+	S67 = uint8(118)
+	S68 = uint8(119)
+	S71 = uint8(128)
+	S72 = uint8(129)
+	S73 = uint8(130)
+	S74 = uint8(131)
+	S75 = uint8(132)
+	S76 = uint8(133)
+	S77 = uint8(134)
+	S78 = uint8(135)
+	S81 = uint8(144)
+	S82 = uint8(145)
+	S83 = uint8(146)
+	S84 = uint8(147)
+	S85 = uint8(148)
+	S86 = uint8(149)
+	S87 = uint8(150)
+	S88 = uint8(151)
 )
 
 // Dedicated switches
 const (
-	SD1 = 8
-	SD2 = 9
-	SD3 = 10
-	SD4 = 11
-	SD5 = 12
-	SD6 = 13
-	SD7 = 14
-	SD8 = 15
+	SD1 = uint8(8)
+	SD2 = uint8(9)
+	SD3 = uint8(10)
+	SD4 = uint8(11)
+	SD5 = uint8(12)
+	SD6 = uint8(13)
+	SD7 = uint8(14)
+	SD8 = uint8(15)
 )
 
 // Flipper switches
 const (
-	SF1 = 0
-	SF2 = 1
-	SF3 = 2
-	SF4 = 3
-	SF5 = 4
-	SF6 = 5
-	SF7 = 6
-	SF8 = 7
+	SF1 = uint8(0)
+	SF2 = uint8(1)
+	SF3 = uint8(2)
+	SF4 = uint8(3)
+	SF5 = uint8(4)
+	SF6 = uint8(5)
+	SF7 = uint8(6)
+	SF8 = uint8(7)
 )
 
 // Flipper coils
 const (
-	FLLH = 35
-	FLLM = 36
-	FLRH = 37
-	FLRM = 38
-	FULH = 39
-	FULM = 40
-	FURH = 41
-	FURM = 42
+	FLLH = uint8(35)
+	FLLM = uint8(34)
+	FLRH = uint8(33)
+	FLRM = uint8(32)
+	FULH = uint8(39)
+	FULM = uint8(38)
+	FURH = uint8(37)
+	FURM = uint8(36)
 )
 
 var Devices = map[string]uint8{
@@ -426,13 +426,13 @@ var Devices = map[string]uint8{
 	"SF7":  6,
 	"SF8":  7,
 	"FLLH": 35,
-	"FLLM": 36,
-	"FLRH": 37,
-	"FLRM": 38,
+	"FLLM": 34,
+	"FLRH": 33,
+	"FLRM": 32,
 	"FULH": 39,
-	"FULM": 40,
-	"FURH": 41,
-	"FURM": 42,
+	"FULM": 38,
+	"FURH": 37,
+	"FURM": 36,
 }
 
 var SwitchNames = map[uint8]string{
