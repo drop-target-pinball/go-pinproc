@@ -16,7 +16,10 @@ import (
 	"unsafe"
 )
 
-const MaxEvents = 256
+const (
+	MaxEvents   = 256
+	MaxSwitches = 256
+)
 
 type MachType int
 
@@ -114,7 +117,7 @@ func (e *Event) fromC(ce *C.PREvent) {
 	e.Time = uint32(ce.time)
 }
 
-type EventType uint8
+type EventType uint32
 
 const (
 	EventTypeInvalid                  EventType = 0
@@ -326,6 +329,15 @@ func (p *PROC) SwitchUpdateRule(switchNum uint8, eventType EventType, rule Switc
 		linkedDrivers[i].toC(&prLinkedDrivers[i])
 	}
 	result := C.PRSwitchUpdateRule(p.h, C.uint8_t(switchNum), C.PREventType(eventType), &prRule, &prLinkedDrivers[0], C.int(linkedDriversLen), bool_t(driverOutputsNow))
+	if int(result) != C.kPRSuccess {
+		return procError()
+	}
+	return nil
+}
+
+func (p *PROC) GetSwitchStates(states []EventType) error {
+	statesPtr := (*C.PREventType)(unsafe.Pointer(&states[0]))
+	result := C.PRSwitchGetStates(p.h, statesPtr, C.ushort(len(states)))
 	if int(result) != C.kPRSuccess {
 		return procError()
 	}
