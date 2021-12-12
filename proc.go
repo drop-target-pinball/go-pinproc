@@ -373,6 +373,39 @@ func DriverStatePulse(driverState *DriverState, milliseconds uint8) {
 	driverState.FutureEnable = false
 }
 
+func DriverStateFuturePulse(driverState *DriverState, milliseconds uint8, futureTime uint32) {
+	driverState.State = true
+	driverState.Timeslots = futureTime
+	driverState.WaitForFirstTimeSlot = false
+	driverState.OutputDriveTime = milliseconds
+	driverState.PatterOnTime = 0
+	driverState.PatterOffTime = 0
+	driverState.PatterEnable = false
+	driverState.FutureEnable = true
+}
+
+func DriverStatePatter(driverState *DriverState, millisecondsOn uint8, millisecondsOff uint8, originalOnTime uint8, now bool) {
+	driverState.State = true
+	driverState.Timeslots = 0
+	driverState.WaitForFirstTimeSlot = !now
+	driverState.OutputDriveTime = originalOnTime
+	driverState.PatterOnTime = millisecondsOn
+	driverState.PatterOffTime = millisecondsOff
+	driverState.PatterEnable = true
+	driverState.FutureEnable = false
+}
+
+func DriverStatePulsedPatter(driverState *DriverState, millisecondsOn uint8, millisecondsOff uint8, patterTime uint8, now bool) {
+	driverState.State = false
+	driverState.Timeslots = 0
+	driverState.WaitForFirstTimeSlot = !now
+	driverState.OutputDriveTime = patterTime
+	driverState.PatterOnTime = millisecondsOn
+	driverState.PatterOffTime = millisecondsOff
+	driverState.PatterEnable = true
+	driverState.FutureEnable = false
+}
+
 func IsCoil(id string) bool {
 	return id[0] == 'C'
 }
