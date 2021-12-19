@@ -259,6 +259,14 @@ func (p *PROC) DriverPulse(driverNum uint8, milliseconds uint8) error {
 	return nil
 }
 
+func (p *PROC) DriverSchedule(driverNum uint8, schedule uint32, cycleSeconds uint8, now bool) error {
+	result := C.PRDriverSchedule(p.h, C.uint8_t(driverNum), C.uint32_t(schedule), C.uint8_t(cycleSeconds), bool_t(now))
+	if int(result) != C.kPRSuccess {
+		return procError()
+	}
+	return nil
+}
+
 func (p *PROC) DriverUpdateState(driverState *DriverState) error {
 	var prDriverState C.PRDriverState
 	driverState.toC(&prDriverState)
